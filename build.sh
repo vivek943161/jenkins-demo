@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "================================"
-echo " Jenkins Build Startedddddd"
+echo " Jenkins Build Startedddd"
 echo "================================"
 
 echo "Hostname: $(hostname)"
