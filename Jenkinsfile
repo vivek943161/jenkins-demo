@@ -1,3 +1,4 @@
+cat > Jenkinsfile <<'EOF'
 pipeline {
     agent any
 
@@ -11,23 +12,20 @@ pipeline {
 
         stage('Run Script') {
             steps {
-                sh 'chmod +x build.sh'
-                sh './build.sh'
+                sh 'chmod +x hello.sh'
+                sh './hello.sh'
             }
         }
     }
 
     post {
         success {
-            echo 'Build completed successfully'
+            echo 'BUILD SUCCESSFUL'
         }
 
         failure {
-            echo 'Build failed'
-        }
-
-        always {
-            archiveArtifacts artifacts: 'build.sh', fingerprint: true
+            echo 'BUILD FAILED'
         }
     }
 }
+EOF
